@@ -6,15 +6,24 @@ UI-библиотека для Roblox-экзекуторов: простой с�
 ```lua
 local Majestic = loadstring(game:HttpGet("https://raw.githubusercontent.com/HerobrineMag/MajesticUI/refs/heads/main/Majestic/Majestic.lua"))()
 
-local Window = Majestic:Window({ Title = "Мой хаб"; Subtitle = "v1.0"; Icon = "home" })
-local Tab = Window:Tab({ Name = "Main"; Icon = "swords" })
-
-Tab:Toggle({
-    Name = "Auto Farm";
-    Default = false;
-    Callback = function(v)
-        print("hi", v)
-    end;
+local Window = Majestic:Window(
+    {
+        Title = "Мой хаб";
+        Subtitle = "v1.0";
+        Icon = "home"
+    })
+    local Tab = Window:Tab(
+    {
+        Name = "Main";
+        Icon = "swords"
+    })
+    
+    Tab:Toggle({
+        Name = "Auto Farm";
+        Default = false;
+        Callback = function(v)
+            print("hi", v)
+        end;
 })
 ```
 
