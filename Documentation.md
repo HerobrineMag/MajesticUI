@@ -74,10 +74,18 @@ Dropdown, Input, Keybind, ColorPicker, Table, Button).
 
 ```lua
 local Window = Majestic:Window({
-    Title = "Hub"; Subtitle = "v1.0"; Icon = "home"; IconUrl = "Lucide";
-    Theme = "Dark"; Accent = Color3.fromRGB(139, 92, 246);
-    Glass = { Color = Color3.fromRGB(28, 34, 50); Blur = 60; Transparency = 50 };
-    Size = Vector2.new(620, 420); Scale = 1;
+    Title = "Hub";
+    Subtitle = "v1.0";
+    Icon = "home";
+    IconUrl = "Lucide";
+    Theme = "Dark";
+    Accent = Color3.fromRGB(139, 92, 246);
+    Glass = {
+        Color = Color3.fromRGB(28, 34, 50);
+        Blur = 60; Transparency = 50
+    };
+    Size = Vector2.new(620, 420);
+    Scale = 1;
     ToggleKey = Enum.KeyCode.RightShift;
     Folder = "MyHub";
     LoadingEnabled = true;
@@ -112,7 +120,12 @@ local Window = Majestic:Window({
 
 ```lua
 Window:TabSection("Combat")                                         -- заголовок группы вкладок
-local Tab = Window:Tab({ Name = "Aim"; Icon = "crosshair"; IconUrl = "Lucide" })
+local Tab = Window:Tab(
+{
+    Name = "Aim";
+    Icon = "crosshair";
+    IconUrl = "Lucide"
+})
 Window:TabDivider()
 ```
 
@@ -121,13 +134,46 @@ Window:TabDivider()
 ## Группы и колонки
 
 ```lua
-local Group = Tab:Group({ Name = "Combat"; Icon = "swords"; Collapsible = true; Collapsed = false })
-Group:Toggle({ Name = "Aimbot"; Default = false })
-Group:Collapse(); Group:Expand(); Group:ToggleCollapse(); Group:SetTitle("..."); Group:SetVisible(false)
+local Group = Tab:Group(
+{
+    Name = "Combat";
+    Icon = "swords";
+    Collapsible = true;
+    Collapsed = false
+})
+
+Group:Toggle(
+{
+    Name = "Aimbot";
+    Default = false
+})
+
+Group:Collapse();
+Group:Expand();
+Group:ToggleCollapse();
+ Group:SetTitle("...");
+Group:SetVisible(false)
 
 local left, right = Tab:Columns(2)        -- на телефоне колонки встают друг под другом
-left:Button({ Name = "Left"; Callback = function() end })
-right:Group({ Name = "Nested" }):Slider({ Name = "Speed"; Min = 0; Max = 10; Default = 5 })
+
+left:Button(
+{
+    Name = "Left";
+    Callback = function()
+        print("asd)
+    end
+})
+
+right:Group(
+{
+Name = "Nested"
+}):Slider(
+{
+    Name = "Speed";
+    Min = 0;
+    Max = 10;
+    Default = 5
+})
 ```
 
 ## Элементы
@@ -187,8 +233,19 @@ right:Group({ Name = "Nested" }):Slider({ Name = "Speed"; Min = 0; Max = 10; Def
 Везде, где есть `Icon`, можно указать, откуда она берётся:
 
 ```lua
-Tab:Toggle({ Name = "ESP"; Icon = "eye"; IconUrl = "Lucide" })          -- Lucide: eye, swords, home, layout-dashboard ...
-Tab:Toggle({ Name = "ESP"; Icon = "visibility"; IconUrl = "Material" }) -- Material: visibility, touch_app, content_copy ...
+Tab:Toggle(
+{
+    Name = "ESP";
+    Icon = "eye";
+    IconUrl = "Lucide"
+})          -- Lucide: eye, swords, home, layout-dashboard ...
+
+Tab:Toggle(
+{
+    Name = "ESP";
+    Icon = "visibility";
+    IconUrl = "Material"
+}) -- Material: visibility, touch_app, content_copy ...
 ```
 
 `IconUrl` принимает `"Lucide"`, `"Material"` или ссылку на свой набор (формат ниже). Набор для всего окна задаётся
@@ -263,7 +320,7 @@ Majestic:RegisterTheme("Mine",
 Majestic:Notify(
 {
     Title = "Готово";
-     Content = "Текст";
+    Content = "Текст";
     Type = "Success";
     Duration = 5
 })
