@@ -1,6 +1,4 @@
--- Majestic v2: пример. Везде одинаковый формат: Tab:Элемент({ Поле = значение; ... })
-
-local Majestic = loadstring(game:HttpGet("https://raw.githubusercontent.com/HerobrineMag/MajesticUI/refs/heads/main/Majestic/Majestic.lua"))()
+local Majestic=loadstring(game:HttpGet"https://raw.githubusercontent.com/HerobrineMag/MajesticUI/main/Majestic.lua")()
 
 local Window = Majestic:Window({
 	Title = "Majestic Hub";
