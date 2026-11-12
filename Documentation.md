@@ -233,7 +233,11 @@ Majestic:SetTheme("Dark")                 -- вернуть обычную те�
 ```lua
 Majestic:SetTheme("Ocean")
 Majestic:SetAccent(Color3.fromRGB(255, 80, 80))
-Majestic:RegisterTheme("Mine", { Background = Color3.fromRGB(10, 10, 10); Accent = Color3.fromRGB(0, 255, 120) })
+Majestic:RegisterTheme("Mine",
+{
+    Background = Color3.fromRGB(10, 10, 10);
+    Accent = Color3.fromRGB(0, 255, 120)
+})
 ```
 
 Ключи темы: `Background`, `Topbar`, `Sidebar`, `Element`, `ElementHover`, `Stroke`, `Accent`, `Text`, `SubText`,
@@ -247,7 +251,13 @@ Majestic:RegisterTheme("Mine", { Background = Color3.fromRGB(10, 10, 10); Accent
 
 **Уведомления.**
 ```lua
-Majestic:Notify({ Title = "Готово"; Content = "Текст"; Type = "Success"; Duration = 5 })
+Majestic:Notify(
+{
+    Title = "Готово";
+     Content = "Текст";
+    Type = "Success";
+    Duration = 5
+})
 ```
 `Type`: `Info`, `Success`, `Warning`, `Error`. `Duration = 0` не закрывается само. Клик закрывает.
 
@@ -255,7 +265,12 @@ Majestic:Notify({ Title = "Готово"; Content = "Текст"; Type = "Succes
 ```lua
 Window:Dialog({
     Title = "Sure?"; Content = "...";
-    Buttons = { { "Yes", function() end }, { "Cancel" } };
+    Buttons = {
+    {
+        "Yes", function()
+            end
+    },
+    { "Cancel" } };
 })
 ```
 
@@ -276,7 +291,22 @@ KeySystem = {
 
 **Home-вкладка.**
 ```lua
-Window:HomeTab({ Welcome = "Hi"; Buttons = { { Name = "Discord"; Link = "https://..." } }; Changelog = { { Title = "v1"; Text = "..." } } })
+Window:HomeTab(
+{
+Welcome = "Hi";
+Buttons = {
+    {
+        Name = "Discord";
+        Link = "https://..."
+    }
+    };
+        Changelog = {
+        {
+            Title = "v1";
+            Text = "..."
+        }
+    }
+})
 ```
 Аватар и ник, игра, статистика сервера (игроки, пинг, FPS, сессия), Place ID и Job ID целиком (клик копирует).
 
@@ -286,9 +316,12 @@ Liquid Glass, конфиги, редактор тем.
 ## Конфиги
 
 ```lua
-Window:SaveConfig("name"); Window:LoadConfig("name"); Window:DeleteConfig("name")
+Window:SaveConfig("name");
+Window:LoadConfig("name");
+Window:DeleteConfig("name")
 Window:ListConfigs()
-Window:SetAutoload("name"); Window:SetAutoload(nil)
+Window:SetAutoload("name");
+Window:SetAutoload(nil)
 Window:LoadAutoConfig()        -- вызывай в конце скрипта, когда все элементы созданы
 ```
 Сохраняются элементы с `Flag`: Toggle, Slider, RangeSlider, Dropdown, Input, Keybind, ColorPicker (с альфой).
