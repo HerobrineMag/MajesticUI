@@ -1,4 +1,4 @@
-local Majestic=loadstring(game:HttpGet"https://raw.githubusercontent.com/HerobrineMag/MajesticUI/main/Majestic.lua")()
+local Majestic = loadstring(game:HttpGet"https://raw.githubusercontent.com/HerobrineMag/MajesticUI/main/Majestic.lua")()
 
 local Window = Majestic:Window({
 	Title = "Majestic Hub";
