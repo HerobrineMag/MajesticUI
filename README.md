@@ -6,7 +6,7 @@ UI-библиотека для Roblox-экзекуторов: простой с�
 ## Подключение
 
 ```lua
-local Majestic=loadstring(game:HttpGet"https://raw.githubusercontent.com/HerobrineMag/MajesticUI/main/Majestic.lua")()
+local Majestic = loadstring(game:HttpGet"https://raw.githubusercontent.com/HerobrineMag/MajesticUI/main/Majestic.lua")()
 ```
 
 ## Быстрый старт
