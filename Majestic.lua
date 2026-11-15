@@ -1244,7 +1244,7 @@ function Gui.modal(width, parent, opts)
 	opts = opts or {}
 	parent = parent or Gui.get()
 	local dim = new("Frame", {
-		Size = UDim2.fromScale(1, 1), BackgroundColor3 = Color3.new(0, 0, 0), BackgroundTransparency = 1,
+		Size = UDim2.fromScale(1, 2), BackgroundColor3 = Color3.new(0, 0, 0), BackgroundTransparency = 1,
 		Active = true, ZIndex = opts.zindex or 100, Parent = parent,
 	})
 	tween(dim, { BackgroundTransparency = opts.dim or 0.4 }, 0.2)
