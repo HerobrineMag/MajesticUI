@@ -1106,6 +1106,7 @@ function Gui.get()
 	local gui = Instance.new("ScreenGui")
 	gui.Name = "Majestic"
 	gui.ResetOnSpawn = false
+	gui.IgnoreGuiInset = true
 	gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	gui.DisplayOrder = 999
 	pcall(function()
