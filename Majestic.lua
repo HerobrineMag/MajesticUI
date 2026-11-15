@@ -4704,7 +4704,7 @@ function Loading.run(cfg)
 	cfg = cfg or {}
 	local steps = cfg.Steps or defaultSteps
 	local total = cfg.Time or 1.8
-	local modal = Gui.modal(340, nil, { zindex = 200, dim = 0.2 })
+	local modal = Gui.modal(340, nil, { zindex = 300, dim = 0.2 })
 	local inner = modal.inner
 
 	local logoHolder = new("Frame", { Size = UDim2.new(1, 0, 0, 44), BackgroundTransparency = 1, LayoutOrder = 1, Parent = inner })
